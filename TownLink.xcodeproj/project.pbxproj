@@ -9,16 +9,53 @@
 /* Begin PBXBuildFile section */
 		117B327A2D2FEDA400119B49 /* TownLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117B32792D2FEDA400119B49 /* TownLinkApp.swift */; };
 		117B327C2D2FEDA400119B49 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117B327B2D2FEDA400119B49 /* ContentView.swift */; };
-		117B327E2D2FEDA600119B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117B327D2D2FEDA600119B49 /* Assets.xcassets */; };
-		117B32812D2FEDA600119B49 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117B32802D2FEDA600119B49 /* Preview Assets.xcassets */; };
+		11AEC5352D30235E00B1DBE1 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 11AEC5342D30235E00B1DBE1 /* GoogleSignIn */; };
+		11AEC5372D30235E00B1DBE1 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 11AEC5362D30235E00B1DBE1 /* GoogleSignInSwift */; };
+		11AEC5562D3023DB00B1DBE1 /* Market.viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC5392D3023DA00B1DBE1 /* Market.viewModel.swift */; };
+		11AEC5572D3023DB00B1DBE1 /* User.viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC53A2D3023DA00B1DBE1 /* User.viewModel.swift */; };
+		11AEC5582D3023DB00B1DBE1 /* Worker.viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC53B2D3023DA00B1DBE1 /* Worker.viewModel.swift */; };
+		11AEC5592D3023DB00B1DBE1 /* Market.model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC53D2D3023DB00B1DBE1 /* Market.model.swift */; };
+		11AEC55A2D3023DB00B1DBE1 /* User.model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC53E2D3023DB00B1DBE1 /* User.model.swift */; };
+		11AEC55B2D3023DB00B1DBE1 /* Worker.model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC53F2D3023DB00B1DBE1 /* Worker.model.swift */; };
+		11AEC55F2D3023DB00B1DBE1 /* EventsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC5452D3023DB00B1DBE1 /* EventsDetailView.swift */; };
+		11AEC5602D3023DB00B1DBE1 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC5462D3023DB00B1DBE1 /* EventsView.swift */; };
+		11AEC5612D3023DB00B1DBE1 /* ScaleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC5482D3023DB00B1DBE1 /* ScaleButtonStyle.swift */; };
+		11AEC5622D3023DB00B1DBE1 /* Add.Listing.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC54A2D3023DB00B1DBE1 /* Add.Listing.View.swift */; };
+		11AEC5632D3023DB00B1DBE1 /* Market.Detail.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC54B2D3023DB00B1DBE1 /* Market.Detail.View.swift */; };
+		11AEC5642D3023DB00B1DBE1 /* Market.List.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC54C2D3023DB00B1DBE1 /* Market.List.View.swift */; };
+		11AEC5652D3023DB00B1DBE1 /* Market.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC54D2D3023DB00B1DBE1 /* Market.View.swift */; };
+		11AEC5662D3023DB00B1DBE1 /* Login.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC54F2D3023DB00B1DBE1 /* Login.View.swift */; };
+		11AEC5672D3023DB00B1DBE1 /* Worker.Detail.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC5512D3023DB00B1DBE1 /* Worker.Detail.View.swift */; };
+		11AEC5682D3023DB00B1DBE1 /* WorkersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC5522D3023DB00B1DBE1 /* WorkersView.swift */; };
+		11AEC56A2D3024B700B1DBE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11AEC5692D3024B700B1DBE1 /* Assets.xcassets */; };
+		11AEC56D2D3024D200B1DBE1 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC56B2D3024D200B1DBE1 /* extensions.swift */; };
+		11AEC56E2D3024D200B1DBE1 /* evn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEC56C2D3024D200B1DBE1 /* evn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		117B32762D2FEDA400119B49 /* TownLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TownLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		117B32792D2FEDA400119B49 /* TownLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TownLinkApp.swift; sourceTree = "<group>"; };
 		117B327B2D2FEDA400119B49 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		117B327D2D2FEDA600119B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		117B32802D2FEDA600119B49 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		117B328C2D2FFC4800119B49 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11AEC5392D3023DA00B1DBE1 /* Market.viewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Market.viewModel.swift; sourceTree = "<group>"; };
+		11AEC53A2D3023DA00B1DBE1 /* User.viewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.viewModel.swift; sourceTree = "<group>"; };
+		11AEC53B2D3023DA00B1DBE1 /* Worker.viewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.viewModel.swift; sourceTree = "<group>"; };
+		11AEC53D2D3023DB00B1DBE1 /* Market.model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Market.model.swift; sourceTree = "<group>"; };
+		11AEC53E2D3023DB00B1DBE1 /* User.model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.model.swift; sourceTree = "<group>"; };
+		11AEC53F2D3023DB00B1DBE1 /* Worker.model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.model.swift; sourceTree = "<group>"; };
+		11AEC5452D3023DB00B1DBE1 /* EventsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsDetailView.swift; sourceTree = "<group>"; };
+		11AEC5462D3023DB00B1DBE1 /* EventsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		11AEC5482D3023DB00B1DBE1 /* ScaleButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyle.swift; sourceTree = "<group>"; };
+		11AEC54A2D3023DB00B1DBE1 /* Add.Listing.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Add.Listing.View.swift; sourceTree = "<group>"; };
+		11AEC54B2D3023DB00B1DBE1 /* Market.Detail.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Market.Detail.View.swift; sourceTree = "<group>"; };
+		11AEC54C2D3023DB00B1DBE1 /* Market.List.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Market.List.View.swift; sourceTree = "<group>"; };
+		11AEC54D2D3023DB00B1DBE1 /* Market.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Market.View.swift; sourceTree = "<group>"; };
+		11AEC54F2D3023DB00B1DBE1 /* Login.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.View.swift; sourceTree = "<group>"; };
+		11AEC5512D3023DB00B1DBE1 /* Worker.Detail.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.Detail.View.swift; sourceTree = "<group>"; };
+		11AEC5522D3023DB00B1DBE1 /* WorkersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkersView.swift; sourceTree = "<group>"; };
+		11AEC5692D3024B700B1DBE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11AEC56B2D3024D200B1DBE1 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		11AEC56C2D3024D200B1DBE1 /* evn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = evn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11AEC5352D30235E00B1DBE1 /* GoogleSignIn in Frameworks */,
+				11AEC5372D30235E00B1DBE1 /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,18 +90,100 @@
 		117B32782D2FEDA400119B49 /* TownLink */ = {
 			isa = PBXGroup;
 			children = (
+				11AEC53C2D3023DA00B1DBE1 /* ViewModel */,
+				11AEC5542D3023DB00B1DBE1 /* View */,
+				11AEC5402D3023DB00B1DBE1 /* Model */,
+				11AEC56F2D30255F00B1DBE1 /* Preview Content */,
 				117B32792D2FEDA400119B49 /* TownLinkApp.swift */,
 				117B327B2D2FEDA400119B49 /* ContentView.swift */,
-				117B327D2D2FEDA600119B49 /* Assets.xcassets */,
-				117B327F2D2FEDA600119B49 /* Preview Content */,
+				117B328C2D2FFC4800119B49 /* Info.plist */,
+				11AEC5692D3024B700B1DBE1 /* Assets.xcassets */,
+				11AEC56C2D3024D200B1DBE1 /* evn.swift */,
+				11AEC56B2D3024D200B1DBE1 /* extensions.swift */,
 			);
 			path = TownLink;
 			sourceTree = "<group>";
 		};
-		117B327F2D2FEDA600119B49 /* Preview Content */ = {
+		11AEC53C2D3023DA00B1DBE1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				117B32802D2FEDA600119B49 /* Preview Assets.xcassets */,
+				11AEC5392D3023DA00B1DBE1 /* Market.viewModel.swift */,
+				11AEC53A2D3023DA00B1DBE1 /* User.viewModel.swift */,
+				11AEC53B2D3023DA00B1DBE1 /* Worker.viewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		11AEC5402D3023DB00B1DBE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11AEC53D2D3023DB00B1DBE1 /* Market.model.swift */,
+				11AEC53E2D3023DB00B1DBE1 /* User.model.swift */,
+				11AEC53F2D3023DB00B1DBE1 /* Worker.model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11AEC5472D3023DB00B1DBE1 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				11AEC5452D3023DB00B1DBE1 /* EventsDetailView.swift */,
+				11AEC5462D3023DB00B1DBE1 /* EventsView.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		11AEC5492D3023DB00B1DBE1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				11AEC5482D3023DB00B1DBE1 /* ScaleButtonStyle.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		11AEC54E2D3023DB00B1DBE1 /* Markets */ = {
+			isa = PBXGroup;
+			children = (
+				11AEC54A2D3023DB00B1DBE1 /* Add.Listing.View.swift */,
+				11AEC54B2D3023DB00B1DBE1 /* Market.Detail.View.swift */,
+				11AEC54C2D3023DB00B1DBE1 /* Market.List.View.swift */,
+				11AEC54D2D3023DB00B1DBE1 /* Market.View.swift */,
+			);
+			path = Markets;
+			sourceTree = "<group>";
+		};
+		11AEC5502D3023DB00B1DBE1 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				11AEC54F2D3023DB00B1DBE1 /* Login.View.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		11AEC5532D3023DB00B1DBE1 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				11AEC5512D3023DB00B1DBE1 /* Worker.Detail.View.swift */,
+				11AEC5522D3023DB00B1DBE1 /* WorkersView.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		11AEC5542D3023DB00B1DBE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11AEC5472D3023DB00B1DBE1 /* Events */,
+				11AEC5492D3023DB00B1DBE1 /* Helpers */,
+				11AEC54E2D3023DB00B1DBE1 /* Markets */,
+				11AEC5502D3023DB00B1DBE1 /* User */,
+				11AEC5532D3023DB00B1DBE1 /* Workers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11AEC56F2D30255F00B1DBE1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -83,6 +204,10 @@
 			dependencies = (
 			);
 			name = TownLink;
+			packageProductDependencies = (
+				11AEC5342D30235E00B1DBE1 /* GoogleSignIn */,
+				11AEC5362D30235E00B1DBE1 /* GoogleSignInSwift */,
+			);
 			productName = TownLink;
 			productReference = 117B32762D2FEDA400119B49 /* TownLink.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +236,9 @@
 				Base,
 			);
 			mainGroup = 117B326D2D2FEDA400119B49;
+			packageReferences = (
+				11AEC5332D30235E00B1DBE1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = 117B32772D2FEDA400119B49 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,8 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				117B32812D2FEDA600119B49 /* Preview Assets.xcassets in Resources */,
-				117B327E2D2FEDA600119B49 /* Assets.xcassets in Resources */,
+				11AEC56A2D3024B700B1DBE1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +264,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11AEC5652D3023DB00B1DBE1 /* Market.View.swift in Sources */,
+				11AEC5572D3023DB00B1DBE1 /* User.viewModel.swift in Sources */,
 				117B327C2D2FEDA400119B49 /* ContentView.swift in Sources */,
+				11AEC5672D3023DB00B1DBE1 /* Worker.Detail.View.swift in Sources */,
+				11AEC5682D3023DB00B1DBE1 /* WorkersView.swift in Sources */,
+				11AEC5592D3023DB00B1DBE1 /* Market.model.swift in Sources */,
+				11AEC56D2D3024D200B1DBE1 /* extensions.swift in Sources */,
+				11AEC55F2D3023DB00B1DBE1 /* EventsDetailView.swift in Sources */,
+				11AEC5662D3023DB00B1DBE1 /* Login.View.swift in Sources */,
+				11AEC55A2D3023DB00B1DBE1 /* User.model.swift in Sources */,
+				11AEC5562D3023DB00B1DBE1 /* Market.viewModel.swift in Sources */,
+				11AEC5622D3023DB00B1DBE1 /* Add.Listing.View.swift in Sources */,
+				11AEC5642D3023DB00B1DBE1 /* Market.List.View.swift in Sources */,
+				11AEC5612D3023DB00B1DBE1 /* ScaleButtonStyle.swift in Sources */,
 				117B327A2D2FEDA400119B49 /* TownLinkApp.swift in Sources */,
+				11AEC55B2D3023DB00B1DBE1 /* Worker.model.swift in Sources */,
+				11AEC5582D3023DB00B1DBE1 /* Worker.viewModel.swift in Sources */,
+				11AEC56E2D3024D200B1DBE1 /* evn.swift in Sources */,
+				11AEC5632D3023DB00B1DBE1 /* Market.Detail.View.swift in Sources */,
+				11AEC5602D3023DB00B1DBE1 /* EventsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +415,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"TownLink/Preview Content\"";
 				DEVELOPMENT_TEAM = F746C67XXU;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = /Users/ernist/Desktop/TownLink/TownLink/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,11 +445,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"TownLink/Preview Content\"";
 				DEVELOPMENT_TEAM = F746C67XXU;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = /Users/ernist/Desktop/TownLink/TownLink/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +491,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		11AEC5332D30235E00B1DBE1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		11AEC5342D30235E00B1DBE1 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11AEC5332D30235E00B1DBE1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		11AEC5362D30235E00B1DBE1 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11AEC5332D30235E00B1DBE1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 117B326E2D2FEDA400119B49 /* Project object */;
 }
