@@ -30,29 +30,7 @@
     <false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>GIDClientID</key>
-	<string>37643346506-lg5gd87a08v06c94i0cj14p1eecqdv7b.apps.googleusercontent.com</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.googleusercontent.apps.37643346506-lg5gd87a08v06c94i0cj14p1eecqdv7b</string>
-				<string>fb605280002093797</string>
-			</array>
-		</dict>
-	</array>
-	<key>FacebookAppID</key>
-	<string>605280002093797</string>
-	<key>FacebookClientToken</key>
-	<string>e52b90a338fd278312df8bf4c0b4fcd2</string>
-	<key>FacebookDisplayName</key>
-	<string>TownLink</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>fbapi</string>
-		<string>fb-messenger-share-api</string>
-	</array>
+	
     
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>We will need to make use of your location to present relevant information about offers around you.</string>
