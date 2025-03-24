@@ -49,8 +49,10 @@ extension UIApplication {
 
 struct LoginView: View {
     @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var location: LocationDataManager
     @State private var isAnimating = false
-    
+    @State private var progress: Float = 20
+    @State private var isLoading = true
     var body: some View {
         ZStack{
             Image("town_link_bg")
@@ -58,118 +60,82 @@ struct LoginView: View {
                 .scaledToFill()
                 .ignoresSafeArea()
                 .overlay(
-                    Color.black.opacity(0.3) // Adds a semi-transparent dark overlay
+                    Color.black.opacity(0.5)
                 )
-            VStack(){
+            VStack(spacing: 10){
                 Spacer()
                 Text("TownLink")
                     .font(.custom("TrebuchetMS-Bold", size: 36))
                     .foregroundColor(Color.white)
+                Text("Your Local Connection Hub...")
+                    .font(.custom("TrebuchetMS", size: 16))
+                    .foregroundColor(Color.white)
+                Spacer()
+                
+            
                 Spacer()
                 VStack(spacing: 10){
-                    Button(action: {
-//                        authManager.authState = .loggedIn
-                        handleSignInButton()
-                    }, label: {
-                        HStack{
-                            Image(systemName: "g.circle.fill")
-                                .resizable()
-                                .frame(width: 30, height: 30)
+                    
+                    VStack{
+                        Button(action: {
+                            handleGoogleSignInButton()
+                        }, label: {
+                            HStack{
+                                Image(systemName: "g.circle.fill")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
                                 
-                                .padding(.leading, 10)
-                            Text("LOG IN WITH GOOGLE")
-                                .padding(10)
-                                .frame(maxWidth: .infinity)
-                        }
-                    })
-                    .background(.white)
-                    .cornerRadius(5)
-                    
-                    Button(action: {
-                        let loginManager = LoginManager()
-                        if let token = AccessToken.current {
-                            print("User already logged in. Access Token: \(token)")
-                            self.fetchFacebookUserData()
-                        } else {
-                            loginManager.logIn(permissions: ["email", "public_profile", "user_birthday", "user_gender", "first_name", "last_name"], from: nil) { (result, error)  in
-                                if let error = error {
-                                    // Handle login error here
-                                    print("Error: \(error.localizedDescription)")
-                                } else if let result = result, !result.isCancelled {
-                                    // Login successful, you can access the user's Facebook data here
-                                    self.fetchFacebookUserData()
-                                } else {
-                                    // Login was canceled by the user
-                                    print("Login was cancelled.")
-                                }
+                                    .padding(.leading, 10)
+                                Text("LOG IN WITH GOOGLE")
+                                    .padding(10)
+                                    .frame(maxWidth: .infinity)
                             }
-                        }
-                    }, label: {
-                        HStack{
-                            Image("facebook")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                                .padding(.leading, 10)
-                            Text("LOG IN WITH FACEBOOK")
-                                .padding(10)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                        }
-                    })
-                    .background(.blue)
-                    .cornerRadius(5)
-                    
-                    Button(action: {
-                        authManager.authState = .loggedIn
-                    }, label: {
-                        HStack{
-                            Image(systemName: "apple.logo")
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                                .padding(.leading, 10)
-                            Text("LOG IN WITH APPLE")
-                                .padding(10)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                        }
-                    })
-                    .background(.gray.opacity(0.4))
-                    .cornerRadius(5)
-                    
-                    Button(action: {
-                        authManager.authState = .loggedIn
-                    }, label: {
-                        HStack{
-                           
-                            Text("LOG IN WITH PTHONE NUMBER")
-                                .padding(10)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                            
-                        }
-                    })
-                    .background(.red.opacity(0.6))
-                    .cornerRadius(5)
-                    
-                    
-                    Button(action: {
-                        withAnimation {
-                            isAnimating = true
-                        }
-
-                        // Simulate authentication delay
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                            authManager.authState = .guest
-                        }
-                    }, label: {
-                        Text("CONTINUE AS GUEST")
-                            .padding(10)
-                            .frame(maxWidth: .infinity)
-                    })
-                    .background(.black)
-                    .cornerRadius(5)
+                        })
+                        .background(.white)
+                        .cornerRadius(5)
+                        
+                        Button(action: {
+                            loginWithFacebook()
+                        }, label: {
+                            HStack{
+                                Image("facebook")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .padding(.leading, 10)
+                                Text("LOG IN WITH FACEBOOK")
+                                    .padding(10)
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: .infinity)
+                            }
+                        })
+                        .background(.blue)
+                        .cornerRadius(5)
+                        
+                        Button(action: {
+                            authManager.authState = .loggedIn
+                        }, label: {
+                            HStack{
+                                Image(systemName: "apple.logo")
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                    .padding(.leading, 10)
+                                Text("LOG IN WITH APPLE")
+                                    .padding(10)
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: .infinity)
+                            }
+                        })
+                        .background(.gray.opacity(0.4))
+                        .cornerRadius(5)
+                    }
                 }
                 .frame(maxWidth: 300)
+                
+                
+            }
+            .onAppear() {
+                location.startUpdatingLocation()
+                
             }
         }
         .offset(x: isAnimating ? -UIScreen.main.bounds.width : 0)
@@ -177,7 +143,15 @@ struct LoginView: View {
     }
     
     
-    func handleSignInButton() {
+    func loadQuoteView() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+               withAnimation {
+                   self.isLoading = false
+               }
+           }
+       }
+    
+    func handleGoogleSignInButton() {
         
         guard let rootViewController = UIApplication.shared.rootViewController else {
             print("Could not find root view controller")
@@ -190,45 +164,63 @@ struct LoginView: View {
                     print("Error signing in: \(error?.localizedDescription ?? "Unknown error")")
                     return
                 }
-                
-            // If sign in succeeded, display the app's main content view
             print("Successfully signed in with Google")
-            
-            // Access the user profile
-            let user = result.user
-            let fullName = user.profile?.name ?? "No name"
-            let email = user.profile?.email ?? "No email"
-            let givenName = user.profile?.givenName ?? "No name"
-            let familyName = user.profile?.familyName ?? "No name"
-            let profileImageURL = user.profile?.imageURL(withDimension: 100) // Profile image URL (100x100 size)
-
-            // Print user information
-            print("Name: \(fullName)")
-            print("Email: \(email)")
-            if let imageURL = profileImageURL {
-                print("Profile Image URL: \(imageURL)")
+            DispatchQueue.main.async {
+                authManager.authState = .inProccess
             }
+            
+            let user = result.user
+            let accessToken = user.accessToken.tokenString
+            authManager.loginWithSocial(provider: "google", accessToken: accessToken, lat: location.location?.coordinate.latitude ?? 0, lon: location.location?.coordinate.longitude ?? 0) { result in
+                    switch result {
+                       case .success(let userInfo):
+                           print("User Info:", userInfo)
+                            DispatchQueue.main.async {
+                                authManager.authState = .loggedIn
+                            }
+                       case .failure(let error):
+                           print("Login failed:", error.localizedDescription)
+                    }
+                }
         }
     }
     
+    func loginWithFacebook() {
+            let loginManager = LoginManager()
+            
+            if let token = AccessToken.current, !token.isExpired {
+                print("User already logged in. Access Token: \(token.tokenString)")
+                fetchFacebookUserData()
+            } else {
+                loginManager.logIn(permissions: ["public_profile"], from: nil) { result, error in
+                    if let error = error {
+                        print("Login failed: \(error.localizedDescription)")
+                    } else if let result = result, !result.isCancelled {
+                        print("Login successful. Access Token: \(result.token?.tokenString ?? "No Token")")
+                        fetchFacebookUserData()
+                    } else {
+                        print("Login was cancelled.")
+                    }
+                }
+            }
+        }
+    
     func fetchFacebookUserData(){
         if AccessToken.current != nil {
-            // You can make a Graph API request here to fetch user data
-            GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, birthday, gender, email"]).start { (connection, result, error) in
+            GraphRequest(graphPath: "me", parameters: ["fields": "user-id"]).start { (connection, result, error) in
                 if let error = error {
-                    // Handle API request error here
                     print("Error: \(error.localizedDescription)")
                 } else if let userData = result as? [String: Any] {
-                    // Access the user data here
-                    let userID = userData["id"] as? String
-                    let name = userData["name"] as? String
-                    let first_name = userData["first_name"] as? String
-                    let birthday = userData["birthday"] as? String
-                    let email = userData["email"] as? String
-
-                    // Handle the user data as needed
-                    print("User ID: \(userID ?? "")")
-                    print("Name: \(name ?? "")")
+                    if let userID = userData["id"] as? String {
+                        authManager.loginWithSocial(provider: "facebook", accessToken: userID, lat: location.location?.coordinate.latitude ?? 0, lon: location.location?.coordinate.longitude ?? 0) { result in
+                            switch result {
+                               case .success(let userInfo):
+                                   print("User Info:", userInfo)
+                               case .failure(let error):
+                                   print("Login failed:", error.localizedDescription)
+                            }
+                        }
+                    }
                     
                 }
             }
@@ -239,5 +231,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView().environmentObject(AuthManager()).environmentObject(LocationDataManager())
 }

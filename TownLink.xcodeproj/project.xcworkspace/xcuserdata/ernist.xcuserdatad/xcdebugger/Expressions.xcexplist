@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ProfileStore.loginWithSocial(provider:accessToken:completion:):Profile.viewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "request.url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProfileStore.loginWithSocial(provider:accessToken:lat:lon:completion:):Profile.viewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "request.url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in EventStore.publishEvent(newEvent:):Event.viewModel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in TownLinkApp.body.getter:TownLinkApp.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$authManager.authState">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LoginView.handleGoogleSignInButton():Login.View.swift">
+      </ContextState>
+      <ContextState
+         contextName = "main:TownLinkApp.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

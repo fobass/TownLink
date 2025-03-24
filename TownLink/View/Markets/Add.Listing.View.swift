@@ -16,7 +16,10 @@ struct AddListingView: View {
         VStack {
             
             HStack{
-                Text("New Listing")
+                Text("New listing")
+                    .font(.custom("TrebuchetMS-Bold", size: 20))
+                    .foregroundColor(Color.blue.opacity(0.6))
+                    .shadow(color: Color.blue.opacity(0.8), radius: 1)
                 Spacer()
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
@@ -25,13 +28,11 @@ struct AddListingView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .padding(10)
-//                        .frame(maxWidth: .infinity)
                         .background(Color.blue)
                         .cornerRadius(8)
-//                        .clipShape(Circle())
                 })
-                .padding(.trailing, 15)
             }
+            .padding([.trailing, .leading, .top], 10)
             
             if selectedImages.isEmpty {
                HStack {
@@ -180,7 +181,7 @@ struct PhotoPicker: UIViewControllerRepresentable {
         }
 
         func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-            parent.selectedImages.removeAll()
+//            parent.selectedImages.removeAll()
 
             let group = DispatchGroup()
 

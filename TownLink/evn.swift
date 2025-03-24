@@ -18,12 +18,13 @@ let MARKET_SECTION_SUBTITLE =  "List of items selling near by you location, You 
 let WORKER_SECTION_TITLE = "Workers available to help"
 let WORKER_SECTION_SUBTITLE =  "Freelancers to showcase skills and clients to hire quickly for short-term tasks "
 
-var URL_END_POINT = "http://192.168.0.106:3000/api/"
+var URL_END_POINT = "http://192.168.0.108:8080/api/"
+
+
 var MY_LOCATION: [String: Any] = [
     "lat": "3.111720",
     "lon": "101.646265",
     "uuid": "1e42c39a42218233d215a221",
     "dist": "105"
 ]
-
 

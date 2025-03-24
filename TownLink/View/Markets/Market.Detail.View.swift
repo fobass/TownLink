@@ -36,9 +36,9 @@ struct MarketDetailView: View {
                             Spacer()
                             
                             Button(action: {
-                                withAnimation {
+//                                withAnimation {
                                     presentationMode.wrappedValue.dismiss()
-                                }
+//                                }
                             }, label: {
                                 Image(systemName: "square.and.arrow.up")
                                     .font(.custom("ArialRoundedMTBold", size: 14))
@@ -49,9 +49,9 @@ struct MarketDetailView: View {
                             })
                             
                             Button(action: {
-                                withAnimation {
+//                                withAnimation {
                                     presentationMode.wrappedValue.dismiss()
-                                }
+//                                }
                             }, label: {
                                 Image(systemName: "heart")
                                     .font(.custom("ArialRoundedMTBold", size: 14))

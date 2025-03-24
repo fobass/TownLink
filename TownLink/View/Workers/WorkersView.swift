@@ -56,7 +56,7 @@ struct WorkersView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: rows, spacing: 20) {
                             
-                            ForEach(self.store.items.prefix(3), id: \.self) { item in
+                            ForEach(self.store.items.prefix(1), id: \.self) { item in
                                 NavigationLink(destination: WorkerDetailView()) {
                                     HStack{
                                         Text(item.name)
@@ -66,6 +66,9 @@ struct WorkersView: View {
                                     .background(Color.blue)
                                     .cornerRadius(16)
                                     .shadow(radius: 4)
+                                    .scrollTransition{ content, phase in
+                                        content.opacity(phase.isIdentity ? 1 : 0.5)
+                                    }
                                 }
                             }
                         }
@@ -73,6 +76,9 @@ struct WorkersView: View {
                         .padding([.leading, .trailing], 30)
                         
                     }
+                    .scrollTargetLayout()
+                    .scrollTargetBehavior(.viewAligned)
+                    .scrollBounceBehavior(.basedOnSize)
                     
                     VStack{
                         HStack {

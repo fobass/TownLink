@@ -23,6 +23,10 @@ final class WorkerStore: ObservableObject {
         self.items = [
 //            Worker.init(uuid: UUID().uuidString, firstName: "firstName", lastName: "LastName", photoURL: "", isVerified: true, score: 1, vehicleType: 2, remark: "sss", distance: 0.55, ),
             .init(name: "Name", city: "Bish", remark: "Tes", distance: 0, avatar: "d", isVerified: true, flyDate: "ddd"),
+            .init(name: "Nadddme", city: "Bish", remark: "Tes", distance: 0, avatar: "d", isVerified: true, flyDate: "ddd"),
+            .init(name: "Name", city: "Bish", remark: "Tes", distance: 0, avatar: "d", isVerified: true, flyDate: "ddd"),
+            .init(name: "Nadddme", city: "Bish", remark: "Tes", distance: 0, avatar: "d", isVerified: true, flyDate: "ddd"),
+            .init(name: "Name", city: "Bish", remark: "Tes", distance: 0, avatar: "d", isVerified: true, flyDate: "ddd"),
             .init(name: "Nadddme", city: "Bish", remark: "Tes", distance: 0, avatar: "d", isVerified: true, flyDate: "ddd")
         ]
     }
